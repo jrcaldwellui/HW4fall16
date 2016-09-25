@@ -5,9 +5,9 @@
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-
+    = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
   %body
-  = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+
     %h1.title Rotten Potatoes!
     #main
       - if flash[:notice]
