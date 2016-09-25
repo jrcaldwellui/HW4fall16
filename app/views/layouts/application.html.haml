@@ -7,6 +7,7 @@
     = csrf_meta_tags
 
   %body
+  <%= button_to "Hello", new_user_path %>
     %h1.title Rotten Potatoes!
     #main
       - if flash[:notice]
