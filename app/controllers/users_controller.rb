@@ -10,8 +10,14 @@ class UsersController < ApplicationController
 
   def create
     @user =  User.create!(user_params)
-    flash[:notice] = "#{@user.user_id} was successfully created."
-    redirect_to movies_path
+    if(user_id)
+      flash[:notice] = "Welcom #{@user.user_id}. Your account has been created."
+      redirect_to movies_path
+    else
+      flash[:notice] = "Sorry, this user-id is taken. Try again"
+      redirect_to new_user_path
+    end
+
     #this will create new user and check for duplicate user id
   end
   
