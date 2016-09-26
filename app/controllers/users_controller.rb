@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    user_params.each {|t| puts(t) }
     @user = User.create!(user_params)
     flash[:notice] = "#{@user.user_id} was successfully created."
     redirect_to movies_path
