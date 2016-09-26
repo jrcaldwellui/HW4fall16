@@ -1,10 +1,14 @@
-%h1 Sign-up
+%h1 Create New Movie
 
+= form_tag movies_path do
 
-= label :user, :user_id, 'User-ID'
-= text_field :user, 'user_id'
+  = label :movie, :title, 'Title'
+  = text_field :movie, 'title'
 
-= label :user, :email, 'E-Mail'
-= text_field :user, 'email'
-  
+  = label :movie, :rating, 'Rating'
+  = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
 
+  = label :movie, :release_date, 'Released On'
+  = date_select :movie, :release_date
+
+  = submit_tag 'Save Changes'
