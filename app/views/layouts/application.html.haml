@@ -5,9 +5,10 @@
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = button_to 'Log in', new_user_path(@user), :method => :get 
+
   %body
     %h1.title Rotten Potatoes!
+    = button_to 'Log in', new_user_path(@user), :method => :get 
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
