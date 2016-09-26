@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  def user_params
+    params.permit(:user_id,:email)
+  end
     
   def new
     # default: render 'new' template
