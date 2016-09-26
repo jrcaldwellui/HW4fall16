@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    puts("Calling user create")
     @user = User.create()
     #@user.email = user_params[:email]
     #@user.user_id = user_params[:user_id]
