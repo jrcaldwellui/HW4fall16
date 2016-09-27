@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
         
         def login_user(uri_params)
             login_params = uri_params.permit(:user_id,:email)
-            user = User.find_by user_id: params[:user_id] 
+            user = User.find_by user_id: login_params[:user_id] 
             
             if(user && user.email == login_params[:email])
                 user.session_token = SecureRandom.base64
