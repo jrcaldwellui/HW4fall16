@@ -9,7 +9,18 @@ class User < ActiveRecord::Base
                 params[:session_token] = SecureRandom.base64
                 User.create!(params) 
             end
+        end
+        
+        def login_user(uri_params)
+            login_params uri_params.require(:user,:user_id,:email)
+            user = User.find_by user_id: params[:user_id] 
             
+            if(user && user.email == login_params[:email])
+                user.session_token = SecureRandom.base64
+            else
+                return nil
+            end
+                
         end
     end
         
