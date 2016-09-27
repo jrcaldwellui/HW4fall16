@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
    def destroy
         user = session_params[:user]
         user.session = nil
+        user.save()
         redirect_to movies_path
    end
    
