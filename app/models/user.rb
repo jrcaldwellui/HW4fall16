@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
             
             if(user && user.email == login_params[:email])
                 user.session_token = SecureRandom.base64
+                user.save
                 return user
             else
                 return nil
