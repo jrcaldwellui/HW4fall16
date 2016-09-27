@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
         end
         
         def login_user(uri_params)
-            login_params uri_params.require(:user,:user_id,:email)
+            login_params uri_params.require(:user).permit(:user_id,:email)
             user = User.find_by user_id: params[:user_id] 
             
             if(user && user.email == login_params[:email])
