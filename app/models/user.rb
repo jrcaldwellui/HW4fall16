@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
             if( User.find_by user_id: params[:user_id] )
                 return nil
             else
-                params[:session_token] = SecureRandom.base64
+                #params[:session_token] = SecureRandom.base64
                 User.create!(params) 
             end
         end
