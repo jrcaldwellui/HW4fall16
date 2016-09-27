@@ -6,9 +6,12 @@ class ApplicationController < ActionController::Base
 
   
   def set_current_user
+    puts("Checking for session token")
     @current_user ||=	session[:session_token	] && User.find_by_session_token(session[:session_token])
     if @current_user
       puts("user session active")
+    else
+      puts("No sessions")
     end
     
   end

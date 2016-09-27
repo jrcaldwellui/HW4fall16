@@ -8,6 +8,7 @@
 
   %body
     %h1.title Rotten Potatoes!
+    =puts("Current user in view: #{@current_user}")
     - if !@current_user
       = button_to 'Sign up/Login', login_path(@sessions), :method => :get 
     - else
