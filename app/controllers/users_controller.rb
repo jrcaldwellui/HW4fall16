@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user =  User.create_user!(user_params)
     if(@user)
-      flash[:notice] = "Welcom #{@user.user_id}. Your account has been created."
+      flash[:notice] = "Welcome #{@user.user_id}. Your account has been created."
       redirect_to login_path
     else
       flash[:notice] = "Sorry, this user-id is taken. Try again"
