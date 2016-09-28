@@ -10,9 +10,9 @@
     %h1.title Rotten Potatoes!
     =puts("Current user in view: #{@current_user}")
     - if !@current_user
-      = button_to 'Sign up/Login', login_path(@sessions), :method => :get 
+      = button_to 'Sign up/Login', login_path(@sessions), :method => :get, :id => 'signuplogin' 
     - else
-      = button_to 'Logout', logout_path(@sessions), :method => :delete
+      = button_to 'Logout', logout_path(@sessions), :method => :delete, :id => 'logout'
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
