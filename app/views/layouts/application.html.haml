@@ -15,7 +15,7 @@
       = button_to 'Logout', logout_path(@sessions), :method => :delete, :id => 'logout'
     #main
       - if flash[:notice]
-        #notice.message= flash[:notice]
+        #notice.flash_message= flash[:notice]
       - elsif flash[:warning]
         #warning.message= flash[:warning]
     
